@@ -1,0 +1,48 @@
+<div ngController="MainController">
+
+  <!-- Change type of view -->
+  <button ng-click="tableViewOn = !tableViewOn">
+    Toggle View
+  </button>
+
+  <!-- Create new entry -->
+  <button><a ng-href="/#/detail">Create New</a></button>
+  
+
+
+  <!-- Tableview View -->
+  <div ng-if="tableViewOn">
+    <table>
+      <thead>
+        <tr>
+          <th>Project</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr ng-repeat="item in itemArray">
+          <td><a ng-href="{{item.url}}" target="_blank">{{item.name}}</a></td>
+          <td>{{item.description}}</td>
+          <td>
+            <button><a ng-href="#/detail/{{item._id}}" target="_self">Edit</a></button>
+          </td>
+          <td>
+            <button><a ng-click="itemList.deleteItem(item._id)">Delete</a></button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+ </div>
+ 
+
+ 
+  <!-- Thumbnail View -->
+  <div ng-if="!tableViewOn">
+    <div ng-repeat="item in itemArray">
+      <img ng-src="{{item.imgs[0].url}}" height="42" width="42">
+        {{item.name}}
+    </div>
+  </div>
+
+</div>
