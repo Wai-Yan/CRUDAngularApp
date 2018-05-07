@@ -1,6 +1,8 @@
 # Angular Assignment
 
-Here is the repo for the completed Angular assignment. Written in AngularJS version 1.5
+Here is the repo for the completed Angular assignment. Written in AngularJS version 1.5.
+
+I would normally put the API key in a .env file, and would do so in a professional setting. So that you could survey my app with an already-existant set of data, I left it in.
 
 ### Getting Started
 
@@ -17,28 +19,8 @@ http-server -c-1
 ```
 
 Then go to localhost:8080 { Check actual clickable link }
-From here you can access the app as intended
+From here you can access the app as intended.
 
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Authors
+## Author
 
 * **Wai Yan** - *Developer* - (https://github.com/Wai-Yan)

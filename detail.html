@@ -1,13 +1,24 @@
-<form> Name: <input type="text" ng-model="name"></form>
+<div id="edit">
+  <form name="nameForm"> Name:</br><input name="nameInput" type="text" ng-model="name" required>
+    <span ng-show="nameForm.nameInput.$touched && nameForm.nameInput.$invalid">The name is required.</span></form>
 
-<form> Description: <input type="text" ng-model="description"></form>
+  <form name="descForm"> Description: </br><input name="descInput" type="text" ng-model="description" size="50%" required></form>
 
-<form> url: <input type="text" ng-model="url"></form>
+<span ng-show="descForm.descInput.$touched && descForm.descInput.$invalid">The description is required.</span></form>
 
-<button><a ng-href="/#/">
-  Back
-</a></button>
+  <form name="urlForm"> Paste in an image link: </br><input name="urlInput" type="text" ng-model="url" size="50%" required></form>
 
-<button ng-click="itemList.saveItem()" class="btn btn-primary">
-  Save
-</button>
+<span ng-show="urlForm.urlInput.$touched && urlForm.urlInput.$invalid">The url is required.</span></form>
+
+  <div>
+    <img ng-src="{{ url }}" height="200" width="200">
+  </div>
+
+  <button><a ng-href="/#/">
+    Back
+  </a></button>
+
+  <button ng-click="itemList.saveItem()" class="btn btn-primary">
+    Save
+  </button>
+</div>
