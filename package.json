@@ -1,0 +1,23 @@
+{
+  "name": "zerionAssignment",
+  "version": "1.0.0",
+  "description": "Here is the repo for the completed Angular assignment. Written in AngularJS version 1.5.",
+  "main": "document.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Wai-Yan/CRUDAngularApp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Wai-Yan/CRUDAngularApp/issues"
+  },
+  "homepage": "https://github.com/Wai-Yan/CRUDAngularApp#readme",
+  "dependencies": {
+    "http-server": "^0.11.1"
+  }
+}
