@@ -1,44 +1,23 @@
-angular.module("zerionApp").controller('MainController', function($scope, $http, $location, $routeParams) {
+angular.module("zerionApp").controller('MainController', ['$scope', "$apiCall", '$injector', function($scope, $http, $location, $routeParams, $apiCall, $injector, $q) {
+  
   $scope.thumbViewOn = true;
+  $scope.itemArray;
 
-  // Gets every item in the database
-  this.retrieveAllItems = function() {
- 
-    $http({
-       method: 'GET',
-       url:"https://alpha-dataflownode.zerionsoftware.com/code_assignment/records",
-       headers: 
-           { 
-             "Authorization": "Bearer 30929b911de32a3de3fcf7ab7b70c2f44bee3615-f36f43ba47e3446116951a103ad421c44b415614"
-           }
-    })
-    .then(result => {
-      $scope.itemArray = result.data;
-    })
-    .catch(err => {
-      console.log(err)
+  // Grab API functions
+  this.getItems = $http.retrieveAllItems;
+  this.deleteSingle = $http.deleteItem;
+
+  // Runs on initialize
+  this.getItems().then(result => {
+    $scope.itemArray = result.data;
+  })
+
+  // When user presses delete
+  this.deleteButtonPressed = function(itemId) {
+    this.deleteSingle(itemId)
+    .then(() => {
+      this.getItems()
+      .then(result => { $scope.itemArray = result.data; })
     })
   }
-
-  this.retrieveAllItems();
-
-  // Deletes an item based on its ID
-  this.deleteItem = function(itemId) {
- 
-    $http({
-       method: 'DELETE',
-       url: "https://alpha-dataflownode.zerionsoftware.com/code_assignment/records/" + itemId,
-       headers: 
-         { 
-           "Authorization": "Bearer 30929b911de32a3de3fcf7ab7b70c2f44bee3615-f36f43ba47e3446116951a103ad421c44b415614"
-         }
-    })
-    .then(result => {
-      this.retrieveAllItems();
-      $location.path('/');
-    })
-    .catch(err => {
-      console.log(err)
-    })
-  }
-});
+}]);

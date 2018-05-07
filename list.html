@@ -6,7 +6,7 @@
     </button>
 
     <!-- Create new entry -->
-    <button><a ng-href="#/detail">Create New</a></button>
+    <div><a ng-href="/#/detail">Create New</a></div>
   </div>
   
 
@@ -37,10 +37,10 @@
           <td><a ng-href="{{item.url}}" target="_blank">{{item.name}}</a></td>
           <td>{{item.description}}</td>
           <td>
-            <button><a ng-href="#/detail/{{item._id}}" target="_self">Edit</a></button>
+            <div><a ng-href="/#/detail/{{item._id}}" target="_self">Edit</a></div>
           </td>
           <td>
-            <button><a ng-click="itemList.deleteItem(item._id)">Delete</a></button>
+            <div><a ng-click="itemList.deleteButtonPressed(item._id)">Delete</a></div>
           </td>
         </tr>
       </tbody>

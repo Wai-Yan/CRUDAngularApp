@@ -1,25 +1,11 @@
-angular.module("zerionApp").controller('NewItemController', function($location, $scope, $http) {
+angular.module("zerionApp").controller('NewItemController', ["$apiCall", "$scope", "$http", "$location", function($apiCall, $scope, $http, $location) {
 
-    // Saves changes on an item
-    this.saveItem = function() {
+  // Grabs method from API service
+  this.createNewItem = $apiCall.createNew;
 
-      $http({
-         method: 'POST',
-         url : "https://alpha-dataflownode.zerionsoftware.com/code_assignment/records",
-         headers: { 
-           "Authorization": "Bearer 30929b911de32a3de3fcf7ab7b70c2f44bee3615-f36f43ba47e3446116951a103ad421c44b415614",
-           "content-type": "application/json"
-          },
-         data: { 
-                 "name": $scope.name, 
-                 "description": $scope.description, 
-                 "imgs":[
-                     {
-                      "url": $scope.url
-                    }
-                 ]
-               }
-      })
+  // When user clicks Save
+  this.saveChanges = function() {
+    this.createNewItem($scope.name, $scope.description, $scope.url)
       .then(result => {
         $location.path('/');
         return;
@@ -28,5 +14,5 @@ angular.module("zerionApp").controller('NewItemController', function($location, 
         console.log(err)
         return;
       })
-    }
-  })
+  }
+}])
