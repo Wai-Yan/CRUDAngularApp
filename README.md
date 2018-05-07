@@ -12,6 +12,7 @@ Outlined below is my method of serving this app.
 
 ```
 git clone https://github.com/Wai-Yan/CRUDAngularApp.git
+cd CRUDAngularApp/
 ```
 
 You'll need to run npm install:
