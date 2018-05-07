@@ -12,8 +12,8 @@
 
   <!-- Thumbnail View -->
   <div ng-if="thumbViewOn">
-    <div ng-repeat="item in itemArray">
-      <img ng-src="{{item.imgs[0].url}}" height="200" width="200">
+    <div ng-repeat="item in itemArray" class="entry">
+      <img ng-src="{{item.imgs[0].url}}" height="200" width="500">
         {{item.name}} || {{item.description}}
     </div>
   </div>

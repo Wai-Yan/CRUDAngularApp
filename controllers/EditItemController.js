@@ -2,6 +2,7 @@ angular.module("zerionApp").controller('EditItemController', function($scope, $h
 
     var itemId = $routeParams.itemId;
 
+    // When page loads, ask API for all items in database
     $http({
        method: 'GET',
        url:"https://alpha-dataflownode.zerionsoftware.com/code_assignment/records/" + itemId,
@@ -18,7 +19,6 @@ angular.module("zerionApp").controller('EditItemController', function($scope, $h
     .catch(err => {
       console.log(err)
     })
-
 
     // API call to delete item
     this.deleteItem = function() {   

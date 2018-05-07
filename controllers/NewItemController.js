@@ -1,5 +1,6 @@
 angular.module("zerionApp").controller('NewItemController', function($location, $scope, $http) {
 
+    // Saves changes on an item
     this.saveItem = function() {
 
       $http({

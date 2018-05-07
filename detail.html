@@ -1,23 +1,32 @@
 <div id="edit">
   <form name="nameForm"> Name:</br><input name="nameInput" type="text" ng-model="name" required>
-    <span ng-show="nameForm.nameInput.$touched && nameForm.nameInput.$invalid">The name is required.</span></form>
+    <span ng-show="nameForm.nameInput.$touched && nameForm.nameInput.$invalid">
+      The name is required.
+    </span>
+  </form>
 
-  <form name="descForm"> Description: </br><input name="descInput" type="text" ng-model="description" size="50%" required></form>
+  <form name="descForm"> Description: </br><input name="descInput" type="text" ng-model="description" size="50%" required>
+    <span ng-show="descForm.descInput.$touched && descForm.descInput.$invalid">
+      The description is required.
+    </span>
+  </form>
 
-<span ng-show="descForm.descInput.$touched && descForm.descInput.$invalid">The description is required.</span></form>
-
-  <form name="urlForm"> Paste in an image link: </br><input name="urlInput" type="text" ng-model="url" size="50%" required></form>
-
-<span ng-show="urlForm.urlInput.$touched && urlForm.urlInput.$invalid">The url is required.</span></form>
+  <form name="urlForm"> Paste in an image link: </br><input name="urlInput" type="text" ng-model="url" size="50%" required>
+    <span ng-show="urlForm.urlInput.$touched && urlForm.urlInput.$invalid">
+      The url is required.
+    </span>
+  </form>
 
   <div>
-    <img ng-src="{{ url }}" height="200" width="200">
+    <img ng-src="{{ url }}" height="300" width="600">
   </div>
 
+  <!-- Goes back to home page -->
   <button><a ng-href="/#/">
     Back
   </a></button>
 
+  <!-- Saves this in database -->
   <button ng-click="itemList.saveItem()" class="btn btn-primary">
     Save
   </button>

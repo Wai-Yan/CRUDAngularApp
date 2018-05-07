@@ -10,12 +10,20 @@ td, th {
     padding: 8px;
 }
 
+img {
+  object-fit: cover;
+}
+
 tr:nth-child(even) {
     background-color: #dddddd;
 }
 
 form {
   margin-bottom: 10px;
+}
+
+body {
+  background-color: #F0FFF0;
 }
 
 #buttons {
@@ -28,8 +36,10 @@ form {
   padding-left: 20px;
 }
 
-.card {
-  width: 32%;
+.entry {
+  padding: 32px;
 }
+
+
 
 

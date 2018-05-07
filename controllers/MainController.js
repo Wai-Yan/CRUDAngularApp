@@ -1,6 +1,7 @@
 angular.module("zerionApp").controller('MainController', function($scope, $http, $location, $routeParams) {
   $scope.thumbViewOn = true;
 
+  // Gets every item in the database
   this.retrieveAllItems = function() {
  
     $http({
@@ -21,6 +22,7 @@ angular.module("zerionApp").controller('MainController', function($scope, $http,
 
   this.retrieveAllItems();
 
+  // Deletes an item based on its ID
   this.deleteItem = function(itemId) {
  
     $http({
