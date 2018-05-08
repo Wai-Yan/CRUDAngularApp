@@ -1,12 +1,13 @@
 <div ngController="MainController">
+  
   <div id="buttons">
     <!-- Change type of view -->
-    <button ng-click="thumbViewOn = !thumbViewOn">
+    <button class="btn btn-info" ng-click="thumbViewOn = !thumbViewOn">
       Toggle View
     </button>
 
     <!-- Create new entry -->
-    <div><a ng-href="#/detail">Create New</a></div>
+    <button class="btn btn-primary" ng-click="itemList.enterDetailsPage()">Create New</button>
   </div>
   
 
@@ -17,7 +18,6 @@
         {{item.name}} || {{item.description}}
     </div>
   </div>
-
 
 
   <!-- Tableview View -->
@@ -37,13 +37,14 @@
           <td><a ng-href="{{item.url}}" target="_blank">{{item.name}}</a></td>
           <td>{{item.description}}</td>
           <td>
-            <div><a ng-href="#/detail/{{item._id}}" target="_self">Edit</a></div>
+            <button class="btn btn-default" ng-click="itemList.enterDetailsPage(item._id)">Edit</button>
           </td>
           <td>
-            <div><a ng-click="itemList.deleteButtonPressed(item._id)">Delete</a></div>
+            <button class="btn btn-danger" ng-click="itemList.deleteButtonPressed(item._id)">Delete</button>
           </td>
         </tr>
       </tbody>
     </table>
+
  </div>
 </div>

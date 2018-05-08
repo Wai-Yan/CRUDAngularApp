@@ -32,6 +32,10 @@ body {
   margin-top: 20px;
 }
 
+#preview {
+  margin-bottom: 25px;
+}
+
 #edit {
   padding-left: 20px;
 }

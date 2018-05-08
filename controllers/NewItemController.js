@@ -15,4 +15,9 @@ angular.module("zerionApp").controller('NewItemController', ["$apiCall", "$scope
         return;
       })
   }
+
+  // Users clicks the back button
+  this.returnHome = function() {
+    $location.path('/');
+  }
 }])

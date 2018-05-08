@@ -28,4 +28,9 @@ angular.module("zerionApp").controller('EditItemController', ["$apiCall", "$scop
       $scope.itemArray = result.data;
     })
   }
+
+  // Users clicks the back button
+  this.returnHome = function() {
+    $location.path('/');
+  }
 }])
